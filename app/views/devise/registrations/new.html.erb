@@ -1,0 +1,67 @@
+<header class="page-header">
+  <a href="/index">
+    <img style="margin-left: auto; margin-right: auto; display: block;" src="http://cfile28.uf.tistory.com/image/244B1B4751E8DC30362315" alt="logo" width="10%">
+  </a>
+</header>
+
+<section class="container">
+		
+  <div style="padding:0 250px">
+<h3 align="center">회원가입</h3>
+
+<form class="new_user" id="new_user" action="/users" accept-charset="UTF-8" method="post">
+  <input name="utf8" type="hidden" value="&#x2713;" />
+  <input type="hidden" name="authenticity_token" value="Bq6/q15NwGhhe1fKTakIiTuaup6dhNuY3/OT1SNCpfbYmP0zN4bqEMTz4sobkjoQNctWM+6gl2h/Qj+VUeywlA==" />
+  
+  <div class="form-group">
+    <label class="sr-only" for="id">ID</label>
+    
+    <input autofocus="autofocus" type="email" class="form-control" placeholder="아이디" name="user[email]" id="id" />
+  </div>
+
+  <div class="form-group">
+    <label class="sr-only" for="user_password">Password</label>
+    <input autocomplete="off" type="password" class="form-control" placeholder="비밀번호" name="user[password]" id="user_password" />
+  </div>
+  
+  <div class="form-group">
+    <label class="sr-only" for="user_password_confirmation">password confirmation</label>
+    <input autocomplete="off" type="password" class="form-control" placeholder="비밀번호 재확인" name="user[password_confirmation]" id="user_password_confirmation" />
+  </div>
+  
+  </br>
+  
+  <div class="form-group">
+    <label class="sr-only" for="user_name">Name</label>
+    <input autocomplete="off" type="text" class="form-control" placeholder="이름" name="user[name]" id="user_name" />
+  </div>
+  
+  <div class="form-group">
+    <label class="sr-only" for="user_phone">Phone</label>
+    <input autocomplete="off" type="text" class="form-control" placeholder="휴대전화번호" name="user[phone]" id="user_phone" />
+  </div>
+  
+  <div class="form-group">
+    <label class="sr-only" for="user_job">Job</label>
+    <input autocomplete="off" type="text" class="form-control" placeholder="직업" name="user[job]" id="user_job" />
+  </div>
+
+  </br>
+  
+  <div class="form-group">
+    <label for="user_job">질문1</label>
+    <input autocomplete="off" type="text" class="form-control" placeholder="질문의 답" name="user[job]" id="user_job" />
+  </div>
+
+  </br>
+  <div class="actions">
+    <input type="submit" class="btn btn-primary btn-lg btn-block" name="commit" value="Sign up" />
+  </div>
+  
+</form>
+</br>
+<div class="row">
+  <div class="col-md-4"><a href="/users/sign_in">Sign in</a></div>
+  <div class="col-md-4 col-md-offset-4"><a href="/users/password/new">Forgot your password?</a></div>
+</div>
+</section>

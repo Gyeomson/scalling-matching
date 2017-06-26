@@ -1,0 +1,43 @@
+<header class="page-header">
+  <a href="/index">
+    <img style="margin-left: auto; margin-right: auto; display: block;" src="http://cfile28.uf.tistory.com/image/244B1B4751E8DC30362315" alt="logo" width="10%">
+  </a>
+</header>
+
+<section class="container">
+		
+  <div style="padding:0 250px">
+<h3 align="center">로그인</h3>
+
+<form class="form-horizontal" id="new_user" action="/users/sign_in" accept-charset="UTF-8" method="post">
+  <input name="utf8" type="hidden" value="&#x2713;" />
+  <input type="hidden" name="authenticity_token" value="Bq6/q15NwGhhe1fKTakIiTuaup6dhNuY3/OT1SNCpfbYmP0zN4bqEMTz4sobkjoQNctWM+6gl2h/Qj+VUeywlA==" />
+  
+  <div class="form-group">
+    <label class="sr-only" for="id">ID</label>
+    
+    <input autofocus="autofocus" type="email" class="form-control" placeholder="아이디" name="user[email]" id="id" />
+  </div>
+
+  <div class="form-group">
+    <label class="sr-only" for="user_password">Password</label>
+    <input autocomplete="off" type="password" class="form-control" placeholder="비밀번호" name="user[password]" id="user_password" />
+  </div>
+
+  </br>
+  <div class="actions">
+    <input type="submit" class="btn btn-primary btn-lg btn-block" name="commit" value="Log in" />
+  </div>
+  
+    <div class="sr-only form-group ">
+      <input name="user[remember_me]" type="hidden" value="0" />
+      <input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me" />
+      <label for="user_remember_me">Remember me</label>
+    </div>
+</form>
+</br>
+<div class="row">
+  <div class="col-md-4"><a href="/users/sign_up">Sign up</a></div>
+  <div class="col-md-4 col-md-offset-4"><a href="/users/password/new">Forgot your password?</a></div>
+</div>
+</section>

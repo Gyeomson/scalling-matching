@@ -1,0 +1,50 @@
+<div width="100%" height="100%">
+  
+<div class="container" style="margin-top:40px;">
+  <header class="page-header">
+    <div class="media">
+      <div class="media-left media-middle">
+        <a href="/">
+        <img class="media-object" width="100px" src="http://cfile28.uf.tistory.com/image/244B1B4751E8DC30362315" alt="logo">
+        </a>
+      </div>
+      <div class="media-body">
+        <font color="#2698D5">
+          <h1 class="media-heading">이아프조</h1>
+          <p>스케일링 매칭 사이트</p>
+        </font>
+      </div>
+  </header>
+</div>
+
+<nav class="container" >
+  <form action="/search" method="POST" class="navbar-form navbar-left" role="search">
+    <div class="form-group">
+      <select name="search" class="form-control">                
+		    <option>제목</option>                
+		    <option>내용</option>                
+		    <option>작성자</option>                        
+      </select>
+      <label class="sr-only" for="search">검색</label>
+      <input name="keyword" type="text" class="form-control" id="search" placeholder="Search">
+    </div>
+      <button type="submit" class="btn btn-default">Search</button>
+  </form>
+    
+  <div class="navbar-right">
+     <p><a href="/mypage">"<%= current_user.email %>"님 환영합니다.</a> <a href="/users/sign_out">로그아웃</a></p>
+  </div>
+</nav>
+
+<section class="container">
+  <img style="margin-left: auto; margin-right: auto; display: block;" src=http://cfile220.uf.daum.net/image/210FC94D51E3DA8330F4F8 align="center" alt="map" usemap="#school" width="80%">
+    <map name="school" id="school">
+      <area shape="circle" coords="330, 270, 30, 30" alt="유성구" href="#">
+      <area shape="circle" coords="350, 480, 30, 30" alt="서구"  href= "/list/건양대학교">
+      <area shape="circle" coords="470, 480, 30, 30" alt="중구" href="#">
+      <area shape="circle" coords="570, 190, 30, 30" alt="대덕구" href="#">
+      <area shape="circle" coords="630, 400, 30, 30" alt="동구" href="/list/대전 보건대학교">
+    </map>
+</section>
+
+</div>

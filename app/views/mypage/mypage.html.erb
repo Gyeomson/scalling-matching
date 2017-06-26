@@ -1,0 +1,182 @@
+<div class="container">
+  <header class="page-header">
+    <a href="/">
+      <img src="http://cfile28.uf.tistory.com/image/244B1B4751E8DC30362315" alt="logo" width="10%">
+      <h1><a href="/">이아프조</a></h1>
+    </a>
+  </header>
+  
+  
+  <section class="row">
+   <div class="col-md-3">
+          <div class="inform" align="center">
+            <img src="http://cfile28.uf.tistory.com/image/244B1B4751E8DC30362315" alt="user_img" class="img-circle" width="50%">
+            <p class="lead">
+                <%= current_user.email %>
+            </p>
+            <button><a href="/mypage">내 정보</a></button>
+            <button><a href="/users/sign_out">로그아웃</a></button>
+          </div>
+	      
+	        </br>
+	      
+	        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+	          
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="inform">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#" aria-expanded="false" aria-controls="collapseOne">
+                      <a href="/inform">공지사항</a> 
+                    </a>
+                  </h4>
+                </div>
+           
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="school">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#school" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      학교별 게시
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="school">
+                  <div class="panel-body">
+                    
+                    
+                    
+                    <div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="true">
+                      <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                          <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion2" href="#sugu" aria-expanded="false" aria-controls="sugu">
+                              <a href="/list/대전 과학기술대학교">서구</a>
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="sugu" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                          <div class="panel-body">
+                            <a href="/list/대전 과학기술대학교">대전 과학기술대학교</a>
+                          </div>
+                          <div class="panel-body">
+                            <a href="/list/건양대학교">건양대학교</a>
+                          </div>
+                        </div>
+                      </div>
+                     </div>
+                     
+                     <div class="panel-group" id="accordion3" role="tablist" aria-multiselectable="true">
+                      <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                          <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion3" href="#donggu" aria-expanded="false" aria-controls="donggu">
+                              동구
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="donggu" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                          <div class="panel-body">
+                            <a href="/list/대전 보건대학교">대전 보건대학교</a>
+                          </div>
+                        </div>
+                      </div>
+                     </div>
+
+                    </div>
+                  </div>
+                </div>
+	      
+	      </div>
+    </div>
+    
+    
+  <div class="col-md-9">
+	<table class="table table-hover">
+              <tr>
+                  <td rowspan=" 3" class="col-md-2">
+		              <img src="http://cfile28.uf.tistory.com/image/244B1B4751E8DC30362315" alt="..." class="img-circle" width="100" height="100">
+                  </td>
+                  <td class="col-md-2">ID</td>
+                  <td><%=current_user.email%></td></td>
+              </tr>
+              <tr>
+                  <td class="col-md-2">학교</td>
+                  <td>current_user.school</td>
+              </tr>
+              <tr>
+                  <td class="col-md-2">전화번호</td>
+                  <td>current_user.phone</td>
+              </tr>
+      </table>
+      <br/><br/><br/><br/>
+
+      <div style="border:1px solid; padding:10px; margin-bottom:30px">
+	      <table class="table table-hover" >
+          <thead>
+      			<tr>
+      				<td>모집 목록</td>
+      			</tr>
+          </thead>
+          <tbody>
+        		<% @every_post.each do |p| %>
+              <% if p.writer == current_user.email %>
+                <tr>
+                  <td><%=p.id%></td>
+                  <td><a href="/board/<%=p.id%>"><%=p.title%></a></td>
+                </tr>
+              <% end %>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+            
+
+      <div style="border:1px solid; padding:10px; margin-bottom:30px;">
+        <table class="table table-hover" >
+          <h3></h3>
+          <thead>
+        		<tr>
+        			<td>글 번호</td>
+        			<td>게시글로 이동하기</td>
+        		</tr>
+          </thead>
+          <tbody>
+          	<%  @every_register.each do |p| %>
+              <% if p.registor == current_user.email %>
+                <tr>
+                  <td><%=p.post_id%></td>
+                  <td><a href="/board/<%=p.id%>">이동하기</a></td>
+                </tr>
+              <% end %>
+            <% end %>
+           </tbody>
+        </table>
+    </div>
+     
+      <div style="border:1px solid; padding:10px; margin-bottom:30px;">
+        <table class="table table-hover" >
+          <thead>
+        		<tr>
+        			<td>댓글 목록</td>
+        		</tr>
+          </thead>
+          <tbody>
+          	<% @all_post.each do |p| %>
+              <% p.comments.each |comment| %>
+              <% if comment.writer == current_user.email %>
+                <tr>
+                  <td><%=comment.post_id%></td>
+                  <td><a href="/board/<%=p.id%>"><%=p.title%></a></td>
+                  <td><%=comment.mention%></td>
+                </tr>
+              <% end %>
+              <% end %>
+            <% end %>
+           </tbody>
+        </table>
+    </div>
+    
+  </div>
+</body>
+</html>

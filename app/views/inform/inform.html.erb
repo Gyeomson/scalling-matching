@@ -1,0 +1,96 @@
+<div class="container">
+  <header class="page-header">
+    <a href="/">
+      <img src="http://cfile28.uf.tistory.com/image/244B1B4751E8DC30362315" alt="logo" width="10%">
+      <h1><a href="/">이아프조</a></h1>
+    </a>
+  </header>
+  
+  
+  <section class="row">
+    <div class="col-md-3">
+          <div class="inform" align="center">
+            <img src="http://cfile28.uf.tistory.com/image/244B1B4751E8DC30362315" alt="user_img" class="img-circle" width="50%">
+            <p class="lead">
+                <%= current_user.email %>
+            </p>
+            <button><a href="/mypage">내 정보</a></button>
+            <button><a href="/users/sign_out">로그아웃</a></button>
+          </div>
+	      
+	        </br>
+	      
+	        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+	          
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="inform">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#" aria-expanded="false" aria-controls="collapseOne">
+                      <a href="/inform">공지사항</a> 
+                    </a>
+                  </h4>
+                </div>
+           
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="school">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#school" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      학교별 게시
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="school">
+                  <div class="panel-body">
+                    
+                    
+                    
+                    <div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="true">
+                      <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                          <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion2" href="#sugu" aria-expanded="false" aria-controls="sugu">
+                              <a href="/list/대전 과학기술대학교">서구</a>
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="sugu" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                          <div class="panel-body">
+                            <a href="/list/대전 과학기술대학교">대전 과학기술대학교</a>
+                          </div>
+                          <div class="panel-body">
+                            <a href="/list/건양대학교">건양대학교</a>
+                          </div>
+                        </div>
+                      </div>
+                     </div>
+                     
+                     <div class="panel-group" id="accordion3" role="tablist" aria-multiselectable="true">
+                      <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                          <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion3" href="#donggu" aria-expanded="false" aria-controls="donggu">
+                              동구
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="donggu" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                          <div class="panel-body">
+                            <a href="/list/대전 보건대학교">대전 보건대학교</a>
+                          </div>
+                        </div>
+                      </div>
+                     </div>
+                    </div>
+                  </div>
+                </div>
+	      
+	      </div>
+    </div>
+    
+    <div class="col-md-9">
+	    <h2 align="center">공 지 사 항</h2><br><br>
+	    <p align="center">2017년 06월 16일 금요일 오후 2시</p>
+	    <p align="center"><b>Web Programming Final announcement</b></p>
+	</div>

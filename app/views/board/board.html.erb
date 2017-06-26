@@ -1,0 +1,160 @@
+<div class="container">
+  <header class="page-header">
+    <a href="/">
+      <img src="http://cfile28.uf.tistory.com/image/244B1B4751E8DC30362315" alt="logo" width="10%">
+      <h1><a href="/">이아프조</a></h1>
+    </a>
+  </header>
+  
+  
+  <section class="row">
+    <div class="col-md-3">
+          <div class="inform" align="center">
+            <img src="http://cfile28.uf.tistory.com/image/244B1B4751E8DC30362315" alt="user_img" class="img-circle" width="50%">
+            <p class="lead">
+                <%= current_user.email %>
+            </p>
+            <button><a href="/mypage">내 정보</a></button>
+            <button><a href="/users/sign_out">로그아웃</a></button>
+          </div>
+	      
+	        </br>
+	      
+	        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+	          
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="inform">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#" aria-expanded="false" aria-controls="collapseOne">
+                      <a href="/inform">공지사항</a> 
+                    </a>
+                  </h4>
+                </div>
+           
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="school">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#school" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      학교별 게시
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="school">
+                  <div class="panel-body">
+                    
+                    
+                    
+                    <div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="true">
+                      <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                          <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion2" href="#sugu" aria-expanded="false" aria-controls="sugu">
+                              <a href="/list/대전 과학기술대학교">서구</a>
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="sugu" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                          <div class="panel-body">
+                            <a href="/list/대전 과학기술대학교">대전 과학기술대학교</a>
+                          </div>
+                          <div class="panel-body">
+                            <a href="/list/건양대학교">건양대학교</a>
+                          </div>
+                        </div>
+                      </div>
+                     </div>
+                     
+                     <div class="panel-group" id="accordion3" role="tablist" aria-multiselectable="true">
+                      <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                          <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion3" href="#donggu" aria-expanded="false" aria-controls="donggu">
+                              동구
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="donggu" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                          <div class="panel-body">
+                            <a href="/list/대전 보건대학교">대전 보건대학교</a>
+                          </div>
+                        </div>
+                      </div>
+                     </div>
+                    </div>
+                  </div>
+                </div>
+	      
+	      </div>
+    </div>
+    
+    
+
+    <div class="col-md-9" >
+      <h3 align="center"><%=@one_board.school%></h3>
+      
+      <table class="table  table-condensed">
+        <tr align="center">
+          <td>제목</td>
+          <td><%=@one_board.title%></td>
+        </tr>
+        
+        <tr align="center">
+          <td>학교</td>
+          <td><%=@one_board.school%></td>
+        </tr>
+        
+        <tr align="center">
+          <td>모집인원</td>
+          <td><%=@one_board.count%>/<%=@one_board.total%></td>
+        </tr>
+        
+        <tr>
+          <td colspan="2" height="200px">
+            <%=@one_board.content%>
+          </td>
+        </tr>
+        <tr align="center">
+          <td colspan="2">
+            
+            <button type="submit" class="btn btn-default" ><a href="/count/<%=@one_board.id%>" >신청하기</a></button>
+            
+  		      <button type="/list/<%=@one_board.school%>" class="btn btn-default">취소하기</button>
+		      </td>
+      </table>
+
+
+
+      <table class="table table-bordered" >
+        <tr>
+          <td colspan="2">
+            <form action="/comment_create/<%=@one_board.id%>" method="POST">
+        <div class="row form-group">
+          <div class="col-md-12">
+            <% @all_comment.each do |p| %>
+              <% if @one_board.id == p.post_id %>
+                <p><b><%= p.writer %></b> <%= p.mention %></p>
+              <% end %>
+            <% end %>
+          </div>
+            <div class="col-md-10">
+              <label class="sr-only" for="댓글">댓글</label>
+              <input type="test" name="mention" class="form-control" id="mention" placeholder="댓글">
+            </div>
+            <div class="col-md-1">
+              <button type="submit" class="btn btn-default">등록</button>
+            </div>
+        </div>
+      </form>
+          </td>
+        </tr>
+      </table>
+      
+      <button type="submit" class="btn btn-default"><a href="/list/<%=@one_board.school%>">목록</a></button>
+      
+  
+      
+    
+</div>
+</div>

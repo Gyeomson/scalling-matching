@@ -1,0 +1,14 @@
+<h4 align="center">@one_board.id <%= @one_board.id%></h4>
+<h4 align="center">@one_board.count <%= @one_board.count%></h4>
+<h4 align="center">@one_board.total <%= @one_board.total%></h4>
+<h4 align="center">current_user.email <%= current_user.email%></h4>
+</br>
+</br>
+<h3 align="center"> 
+    <% @every_register.each do |r| %>
+    post_id = <%= r.post_id %>
+    order = <%= r.order %>
+    registor = <%= r.registor %>
+    </br>
+    <% end %>
+</h3>
